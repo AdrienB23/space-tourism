@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "home": "Home",
+    "dest": "Destination",
+    "crew": "Crew",
+    "tech": "Technology"
+  },
+  "home": {
+    "title": "Space",
+    "sub": "So, you want to travel to",
+    "desc": "Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!",
+    "exp": "Explore"
+  },
+  "dest": {
+    "title": "Pick your destination",
+    "dist": "Avg. distance",
+    "time": "Est. travel time"
+  },
+  "crew": {
+    "title": "Meet your crew"
+  },
+  "tech": {
+    "title": "Space launch 101",
+    "term": "The terminology..."
+  }
+}
