@@ -5,29 +5,33 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   padding-top: $spacing-500;
-  z-index: 0;
 }
 
 .logo-line-wrapper {
   display: flex;
   align-items: center;
-  position: relative;
   padding-left: $spacing-800;
   column-gap: $spacing-800;
-  width: calc(50% + 16px);
+  width: 100%;
   margin-right: -16px;
 }
 
-.logo-container {
-  z-index: 2;
+@media (max-width: 1100px) {
+  header {
+    padding: 0;
+  }
+
+  .logo-line-wrapper {
+    width: fit-content;
+    padding-left: $spacing-500;
+    padding-right: calc($spacing-500 + 32px);
+  }
 }
 
 .line-container {
-  position: relative;
-  width: 150%;
-  z-index: 3;
+  width: 100%;
+  z-index: 1;
 }
 
 hr {
@@ -41,14 +45,12 @@ nav {
   display: flex;
   justify-content: end;
   align-items: center;
-  width: calc(50% + 16px);
   background-color: rgba($white, 0.05);
   backdrop-filter: blur(80px);
   padding: 0 64px;
   height: 96px;
-  position: relative;
-  z-index: 2;
   margin-left: -16px;
+  width: 100%;
 }
 
 ul {
@@ -82,8 +84,89 @@ a {
 
 span {
   font-family: "Barlow Condensed", sans-serif;
+  font-size: $font-size-desktop-8;
+  letter-spacing: 2px;
 }
 
 .item-number {
   font-weight: bold;
+  letter-spacing: 2.7px;
+}
+
+img {
+  cursor: pointer;
+}
+
+@media (max-width: 705px) {
+  header {
+    padding: $spacing-300 0;
+  }
+
+  .logo-line-wrapper {
+    width: 100%;
+    padding: 0 0 0 $spacing-300;
+    margin: 0;
+  }
+
+  .image-menu {
+    display: flex;
+    justify-content: end;
+    padding-right: $spacing-300;
+    width: 100%;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    background-color: rgba(#0B0D17, 0.15);
+    backdrop-filter: blur(80px);
+    height: 100vh;
+    padding-left: $spacing-400;
+    row-gap: $spacing-600;
+  }
+
+  .close-container {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    padding: $spacing-400 0;
+  }
+
+  .image-close {
+    display: flex;
+    padding-right: $spacing-300;
+  }
+
+  nav {
+    all: initial;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    row-gap: $spacing-400;
+  }
+
+  li {
+    width: 100%;
+  }
+
+  li:hover {
+    box-shadow: -3px 0 0 rgba($white, 0.5) inset;
+  }
+
+  .selected-item {
+    box-shadow: -3px 0 0 $white inset !important;
+  }
+
+  a {
+    height: fit-content;
+    column-gap: $spacing-150;
+  }
 }

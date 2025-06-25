@@ -13,11 +13,23 @@ export class HeaderComponent {
   @Input() data!: ContentData;
   @Input() text!: ContentText;
   @Input() page!: PageEnum;
+  @Input() screenWidth!: number
 
   selectedItem = 0;
+  visible = false;
 
   selectItem(index: number) {
     this.selectedItem = index;
+  }
+
+  openMenu() {
+    this.visible = true;
+    console.log(this.visible);
+  }
+
+  closeMenu() {
+    this.visible = false;
+    console.log(this.visible);
   }
 
 }

@@ -1,5 +1,13 @@
-<div class="page-container">
-  <app-header [data]="data" [text]="text" [page]="page" ></app-header>
+<div class="page-container" [ngClass]="{
+  'page-container': true,
+  'home': page === PageEnum.HOME,
+  'dest': page === PageEnum.DESTINATION,
+  'crew': page === PageEnum.CREW,
+  'tech': page === PageEnum.TECHNOLOGY,
+  'm': screenWidth < 1100 && screenWidth >= 705,
+  's': screenWidth < 705,
+}">
+  <app-header [data]="data" [text]="text" [page]="page" [screenWidth]="screenWidth" ></app-header>
   <main>
     <router-outlet></router-outlet>
   </main>

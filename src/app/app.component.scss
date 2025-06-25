@@ -8,6 +8,14 @@
   background-size: cover;
 }
 
+.page-container.m.home {
+  background-image: url("../assets/images/home/background-home-tablet.jpg");
+}
+
+.page-container.s.home {
+  background-image: url("../assets/images/home/background-home-mobile.jpg");
+}
+
 app-header {
   width: 100%;
 }

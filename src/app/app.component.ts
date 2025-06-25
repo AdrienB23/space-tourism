@@ -1,4 +1,4 @@
-import {Component, Injector, OnInit} from '@angular/core';
+import {Component, HostListener, Injector, OnInit} from '@angular/core';
 import {ContentService} from './shared/services/content.service';
 import {ContentData} from './shared/models/content-data';
 import {ContentText} from './shared/models/content-text';
@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   text!: ContentText;
   data!: ContentData;
   page!: PageEnum;
+  screenWidth!: number;
 
   constructor(
     private contentService : ContentService,
@@ -26,6 +27,11 @@ export class AppComponent implements OnInit {
     this.getData();
     this.getText();
     this.page = PageEnum.HOME;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  getScreenSize() {
+    this.screenWidth = window.innerWidth;
   }
 
   getData() {
@@ -55,4 +61,6 @@ export class AppComponent implements OnInit {
       parent: this.injector
     })
   }
+
+  protected readonly PageEnum = PageEnum;
 }

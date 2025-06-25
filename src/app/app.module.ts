@@ -9,6 +9,9 @@ import { DestinationComponent } from './components/destination/destination.compo
 import { CrewComponent } from './components/crew/crew.component';
 import { TechnologyComponent } from './components/technology/technology.component';
 import { HttpClientModule } from '@angular/common/http';
+import {Drawer} from 'primeng/drawer';
+import {NgOptimizedImage} from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     DestinationComponent,
     CrewComponent,
-    TechnologyComponent
+    TechnologyComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    Drawer,
+    NgOptimizedImage,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
