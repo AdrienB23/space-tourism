@@ -1,0 +1,89 @@
+@use '../../../assets/variables' as *;
+@use 'sass:color';
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: $spacing-500;
+  z-index: 0;
+}
+
+.logo-line-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: $spacing-800;
+  column-gap: $spacing-800;
+  width: calc(50% + 16px);
+  margin-right: -16px;
+}
+
+.logo-container {
+  z-index: 2;
+}
+
+.line-container {
+  position: relative;
+  width: 150%;
+  z-index: 3;
+}
+
+hr {
+  height: 1px;
+  background-color: rgba($white, 0.25);
+  border: none;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: calc(50% + 16px);
+  background-color: rgba($white, 0.05);
+  backdrop-filter: blur(80px);
+  padding: 0 64px;
+  height: 96px;
+  position: relative;
+  z-index: 2;
+  margin-left: -16px;
+}
+
+ul {
+  display: flex;
+  column-gap: $spacing-600;
+  list-style: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  transition: box-shadow 0.6s linear 0s;
+}
+
+li:hover {
+  box-shadow: 0px -3px 0px rgba($white, 0.5) inset;
+}
+
+.selected-item {
+  box-shadow: 0px -3px 0px $white inset !important;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  column-gap: $spacing-150;
+  text-decoration: none;
+  color: $white;
+  height: 96px;
+}
+
+span {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.item-number {
+  font-weight: bold;
+}

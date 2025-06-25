@@ -16,7 +16,6 @@ export class ContentService {
   constructor(private http: HttpClient) { }
 
   getText(): Observable<ContentText> {
-
     return this.http.get<ContentText>(dataUrl + "text.json");
   }
 

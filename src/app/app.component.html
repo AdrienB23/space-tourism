@@ -1,6 +1,6 @@
-<header>
-  <app-header></app-header>
-</header>
-<main>
-  <router-outlet></router-outlet>
-</main>
+<div class="page-container">
+  <app-header [data]="data" [text]="text" [page]="page" ></app-header>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>

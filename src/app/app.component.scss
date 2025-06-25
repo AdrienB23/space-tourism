@@ -1,0 +1,13 @@
+.page-container {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("../assets/images/home/background-home-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+app-header {
+  width: 100%;
+}

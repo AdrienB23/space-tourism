@@ -8,6 +8,7 @@ import { AppRoutingModule } from './core/app-routing/app-routing.module';
 import { DestinationComponent } from './components/destination/destination.component';
 import { CrewComponent } from './components/crew/crew.component';
 import { TechnologyComponent } from './components/technology/technology.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TechnologyComponent } from './components/technology/technology.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

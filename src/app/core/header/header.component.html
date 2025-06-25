@@ -1,1 +1,26 @@
-<p>header works!</p>
+<header>
+  <div class="logo-line-wrapper">
+    <div class="logo-container">
+      <div class="image-container">
+        <img src="assets/images/shared/logo.svg" alt="Website logo">
+      </div>
+    </div>
+    <div class="line-container">
+      <hr />
+    </div>
+  </div>
+  <nav>
+    <ul class="nav-list">
+      <li *ngFor="let title of text.nav; let i = index" class="nav-list-item" (click)="selectItem(i)"
+          [ngClass]="{
+           'nav-list-item': true,
+           'selected-item': selectedItem === i
+          }">
+        <a [routerLink]="title.toLowerCase()">
+          <span class="item-number">0{{i}}</span>
+          <span class="item-title">{{title.toUpperCase()}}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

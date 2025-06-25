@@ -1,10 +1,10 @@
 {
-  "nav": {
-    "home": "Home",
-    "dest": "Destination",
-    "crew": "Crew",
-    "tech": "Technology"
-  },
+  "nav": [
+    "Home",
+    "Destination",
+    "Crew",
+    "Technology"
+  ],
   "home": {
     "title": "Space",
     "sub": "So, you want to travel to",

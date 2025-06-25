@@ -1,10 +1,5 @@
 export interface ContentText {
-  nave: {
-    home: string
-    dest: string
-    crew: string
-    tech: string
-  }
+  nav: string[]
   home: {
     title: string
     sub: string
