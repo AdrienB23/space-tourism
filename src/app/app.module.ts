@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {Drawer} from 'primeng/drawer';
 import {NgOptimizedImage} from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {Button, ButtonDirective} from "primeng/button";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     Drawer,
     NgOptimizedImage,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    Button,
+    ButtonDirective
   ],
   providers: [],
   bootstrap: [AppComponent]

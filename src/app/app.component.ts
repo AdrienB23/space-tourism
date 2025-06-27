@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getScreenSize();
     this.getData();
     this.getText();
     this.page = PageEnum.HOME;

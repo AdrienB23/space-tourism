@@ -1,3 +1,16 @@
-<div class="main-container">
-
+<div *ngIf="text" class="main-content-container">
+  <div class="content-container">
+    <div class="content">
+      <div class="texts-container">
+        <span>{{text.home.desc}}</span>
+        <h1>{{text.home.title.toUpperCase()}}</h1>
+        <h2>{{text.home.sub.toUpperCase()}}</h2>
+      </div>
+      <div class="button-container">
+        <button class="explore-button" pButton>
+          {{text.home.exp.toUpperCase()}}
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

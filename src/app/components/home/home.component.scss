@@ -1,0 +1,48 @@
+@use '../../../assets/variables' as *;
+@use 'sass:color';
+
+.main-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: $spacing-1600;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 632px;
+  align-items: end;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.texts-container {
+  display: flex;
+  flex-direction: column-reverse;
+  row-gap: $spacing-300;
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+
+.explore-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 272px;
+  height: 272px;
+  background-color: $white;
+  border-radius: 999px;
+}
