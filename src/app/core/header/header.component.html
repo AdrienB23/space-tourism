@@ -22,10 +22,10 @@
         </div>
         <nav>
           <ul class="nav-list">
-            <li *ngFor="let title of text.nav; let i = index" class="nav-list-item" (click)="selectItem(i)"
+            <li *ngFor="let title of text.nav; let i = index" class="nav-list-item" (click)="selectItem(title.toLowerCase())"
                 [ngClass]="{
              'nav-list-item': true,
-             'selected-item': selectedItem === i
+             'selected-item': selectedItem === title.toLowerCase()
             }">
               <a [routerLink]="title.toLowerCase()">
                 <span class="item-number">0{{i}}</span>
@@ -39,10 +39,10 @@
   </p-drawer>
   <nav *ngIf="screenWidth >= 705 && text">
     <ul class="nav-list">
-      <li *ngFor="let title of text.nav; let i = index" class="nav-list-item" (click)="selectItem(i)"
+      <li *ngFor="let title of text.nav; let i = index" class="nav-list-item" (click)="selectItem(title.toLowerCase())"
           [ngClass]="{
            'nav-list-item': true,
-           'selected-item': selectedItem === i
+           'selected-item': selectedItem === title.toLowerCase()
           }">
         <a [routerLink]="title.toLowerCase()">
           <span class="item-number">0{{i}}</span>
