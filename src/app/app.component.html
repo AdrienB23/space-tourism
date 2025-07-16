@@ -4,7 +4,7 @@
   'dest': page === PageEnum.DESTINATION,
   'crew': page === PageEnum.CREW,
   'tech': page === PageEnum.TECHNOLOGY,
-  'm': screenWidth < 1100 && screenWidth >= 705,
+  'm': screenWidth <= 1100 && screenWidth >= 705,
   's': screenWidth < 705,
 }">
   <app-header [data]="data" [text]="text" [page]="page" [screenWidth]="screenWidth" ></app-header>
