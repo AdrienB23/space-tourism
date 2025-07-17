@@ -8,10 +8,6 @@
   background-size: cover;
 }
 
-main {
-  flex-grow: 1;
-}
-
 .page-container.m.home {
   background-image: url("../assets/images/home/background-home-tablet.jpg");
 }
@@ -30,8 +26,4 @@ main {
 
 .page-container.s.dest {
   background-image: url("../assets/images/destination/background-destination-mobile.jpg");
-}
-
-app-header {
-  width: 100%;
 }

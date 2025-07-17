@@ -32,6 +32,7 @@ a {
 h2 {
   font-family: $bellefair;
   font-size: $font-size-desktop-2;
+  font-weight: 200;
 }
 
 p {
@@ -154,6 +155,12 @@ li.selected {
   border-bottom: solid 3px $white;
 }
 
+.text-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: $spacing-200;
+}
+
 .statistics-container {
   display: flex;
   flex-direction: row;
@@ -166,4 +173,107 @@ li.selected {
   flex-direction: column;
   row-gap: 12px;
   width: 100%;
+}
+
+@media (max-width: 1100px) {
+  h1, .title-number {
+    font-size: $font-size-tablet-5;
+    letter-spacing: 2px;
+  }
+
+  h2, p {
+    text-align: center;
+  }
+
+  h2 {
+    font-size: $font-size-tablet-2;
+  }
+
+  p {
+    font-size: $font-size-tablet-9;
+  }
+
+  .main-content-container {
+    padding: $spacing-500;
+  }
+
+  .content {
+    flex-direction: column;
+    row-gap: $spacing-400;
+  }
+
+  .image-container {
+    height: 100%;
+  }
+
+  img {
+    width: 300px;
+  }
+
+  .explanation-container {
+    height: 100%;
+  }
+
+  .explanation-content {
+    row-gap: $spacing-300;
+    max-width: 514px;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .statistics-container {
+    column-gap: 0;
+  }
+
+  .distance-container, .travel-time-container {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 705px) {
+  h1, .title-number {
+    font-size: $font-size-mobile-6;
+  }
+
+  h2 {
+    font-size: $font-size-mobile-2
+  }
+
+  p {
+    font-size: $font-size-mobile-9;
+  }
+
+  a {
+    font-size: $font-size-mobile-8;
+    letter-spacing: 2px;
+  }
+
+  .main-content-container {
+    padding: $spacing-300;
+  }
+
+  .content-container {
+    align-items: center;
+  }
+
+  .image-container {
+    height: 50%;
+  }
+
+  img {
+    width: 150px;
+  }
+
+  .explanation-container {
+    min-width: initial;
+    justify-content: start;
+  }
+
+  .statistics-container {
+    flex-direction: column;
+    row-gap: $spacing-300;
+  }
 }
