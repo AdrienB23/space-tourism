@@ -1,0 +1,134 @@
+@use '../../../assets/variables' as *;
+@use 'sass:color';
+
+// =========================
+//          FONTS
+// =========================
+
+h1, .title-number {
+  font-family: $barlow-condensed;
+  font-weight: 400;
+  letter-spacing: 4px;
+  font-size: $font-size-desktop-5;
+  color: $white;
+}
+
+.title-number {
+  font-weight: 700;
+  color: rgba($white, 0.25);
+}
+
+h2 {
+  font-size: $font-size-desktop-3;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: $font-size-desktop-4;
+  font-weight: 400;
+  color: rgba($white, 0.5);
+}
+
+p {
+  font-family: $barlow;
+  font-size: $font-size-desktop-9;
+  font-weight: 300;
+  color: $blue-300;
+  line-height: 180%;
+}
+
+// =========================
+//        CONTAINERS
+// =========================
+
+.main-content-container {
+  display: flex;
+  justify-content: center;
+  padding: $spacing-600 0;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1110px;
+  row-gap: $spacing-300;
+}
+
+.page-title {
+  display: flex;
+  flex-direction: row;
+  column-gap: $spacing-300;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  column-gap: $spacing-400;
+  height: 70vh;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+}
+
+.explanation-container {
+  display: flex;
+  min-width: 445px;
+  width: 100%;
+  height: 100%;
+}
+
+.explanation-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: $spacing-500;
+  width: 100%;
+  height: 100%;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 640px;
+  row-gap: $spacing-300;
+  height: 100%;
+}
+
+.rank-name {
+  display: flex;
+  flex-direction: column-reverse;
+  row-gap: $spacing-200;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: $spacing-600;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  column-gap: $spacing-500;
+
+}
+
+button {
+  width: 15px;
+  height: 15px;
+  border-radius: 100px;
+  background-color: rgba($white, 0.1744);
+  transition: background-color 0.6s linear 0s;
+}
+
+button.selected {
+  background-color: $white !important;
+}
+
+button:hover {
+  background-color: rgba($white, 0.5) !important;
+}
+
