@@ -8,12 +8,28 @@
   background-size: cover;
 }
 
+main {
+  flex-grow: 1;
+}
+
 .page-container.m.home {
   background-image: url("../assets/images/home/background-home-tablet.jpg");
 }
 
 .page-container.s.home {
   background-image: url("../assets/images/home/background-home-mobile.jpg");
+}
+
+.page-container.dest {
+  background-image: url("../assets/images/destination/background-destination-desktop.jpg");
+}
+
+.page-container.m.dest {
+  background-image: url("../assets/images/destination/background-destination-tablet.jpg");
+}
+
+.page-container.s.dest {
+  background-image: url("../assets/images/destination/background-destination-mobile.jpg");
 }
 
 app-header {

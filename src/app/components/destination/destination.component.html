@@ -1,1 +1,39 @@
-<p>destination works!</p>
+<div *ngIf="text" class="main-content-container">
+  <div class="content-container">
+    <div class="page-title">
+      <span class="title-number">01</span>
+      <h1>{{text.dest.title.toUpperCase()}}</h1>
+    </div>
+    <div class="content">
+      <div class="image-container">
+        <img [src]="data.destinations[selectedDestination].images.webp" [alt]="data.destinations[selectedDestination].name + ' image'">
+      </div>
+      <div class="explanation-container">
+        <div class="explanation-content">
+          <nav>
+            <ul>
+              <li *ngFor="let destination of data.destinations; let i = index" [class]="selectedDestination === i ? 'selected' : ''">
+                <a [class]="selectedDestination === i ? 'selected' : ''" [routerLink]="'/destination/' + i">{{destination.name.toUpperCase()}}</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="text-container">
+            <h2>{{ data.destinations[selectedDestination].name.toUpperCase() }}</h2>
+            <p>{{ data.destinations[selectedDestination].description }}</p>
+          </div>
+          <hr />
+          <div class="statistics-container">
+            <div class="distance-container">
+              <h3>{{ text.dest.dist.toUpperCase() }}</h3>
+              <span class="stats">{{ data.destinations[selectedDestination].distance.toUpperCase() }}</span>
+            </div>
+            <div class="travel-time-container">
+              <h3>{{ text.dest.time.toUpperCase() }}</h3>
+              <span class="stats">{{ data.destinations[selectedDestination].travel.toUpperCase() }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

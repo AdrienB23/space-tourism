@@ -57,7 +57,8 @@ export class AppComponent implements OnInit {
     return Injector.create({
       providers: [
         {provide: 'text', useValue: this.text},
-        {provide: 'data', useValue: this.data}
+        {provide: 'data', useValue: this.data},
+        {provide: 'page', useValue: this.page}
       ],
       parent: this.injector
     })

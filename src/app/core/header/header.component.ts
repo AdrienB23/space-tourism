@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {ContentData} from '../../shared/models/content-data';
 import {ContentText} from '../../shared/models/content-text';
 import {PageEnum} from '../../shared/models/page-enum';
@@ -15,7 +15,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   @Input() data!: ContentData;
   @Input() text!: ContentText;
   @Input() page!: PageEnum;
-  @Input() screenWidth!: number
+  @Input() screenWidth!: number;
+  @Output() pageChange = new EventEmitter<unknown>();
 
   selectedItem = 'home';
   visible = false;
@@ -42,6 +43,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
   updateSelectedItem(url: string) {
     const cleanUrl = url.replace(/^\/+/, '').split('/')[0];
     this.selectedItem = cleanUrl || 'home';
+    switch(this.selectedItem) {
+      case 'home': this.page = PageEnum.HOME; break;
+      case 'destination': this.page = PageEnum.DESTINATION; break;
+      case 'crew': this.page = PageEnum.CREW; break;
+      case 'technology': this.page = PageEnum.TECHNOLOGY; break;
+    }
+    this.pageChange.emit(this.page);
   }
 
   selectItem(item: string) {

@@ -7,7 +7,7 @@
   'm': screenWidth <= 1100 && screenWidth >= 705,
   's': screenWidth < 705,
 }">
-  <app-header [data]="data" [text]="text" [page]="page" [screenWidth]="screenWidth" ></app-header>
+  <app-header [data]="data" [text]="text" [(page)]="page" [screenWidth]="screenWidth" ></app-header>
   <main>
     <router-outlet [routerOutletData]="{text: text, data: data, screenWidth: screenWidth}"></router-outlet>
   </main>

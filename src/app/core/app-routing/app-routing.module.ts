@@ -8,9 +8,9 @@ import {TechnologyComponent} from '../../components/technology/technology.compon
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'destination', component: DestinationComponent },
-  { path: 'crew', component: CrewComponent },
-  { path: 'technology', component: TechnologyComponent },
+  { path: 'destination/:dest', component: DestinationComponent },
+  { path: 'crew/:crew', component: CrewComponent },
+  { path: 'technology/:tech', component: TechnologyComponent },
 ];
 
 @NgModule({

@@ -27,7 +27,7 @@
              'nav-list-item': true,
              'selected-item': selectedItem === title.toLowerCase()
             }">
-              <a [routerLink]="title.toLowerCase()">
+              <a [routerLink]="title.toLowerCase() + ((i === 0) ? '' : '/0')">
                 <span class="item-number">0{{i}}</span>
                 <span class="item-title">{{title.toUpperCase()}}</span>
               </a>
@@ -44,7 +44,7 @@
            'nav-list-item': true,
            'selected-item': selectedItem === title.toLowerCase()
           }">
-        <a [routerLink]="title.toLowerCase()">
+        <a [routerLink]="title.toLowerCase() + ((i === 0) ? '' : '/0')">
           <span class="item-number">0{{i}}</span>
           <span class="item-title">{{title.toUpperCase()}}</span>
         </a>
