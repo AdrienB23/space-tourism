@@ -1,7 +1,7 @@
 import {Component, effect, inject, OnInit, Signal} from '@angular/core';
 import {ActivatedRoute, ParamMap, ROUTER_OUTLET_DATA} from '@angular/router';
-import {ContentData} from '../../shared/models/content-data';
-import {ContentText} from '../../shared/models/content-text';
+import {ContentService} from '../../shared/services/content.service';
+import {Destination} from '../../shared/models/destination';
 
 @Component({
   selector: 'app-destination',
@@ -10,17 +10,19 @@ import {ContentText} from '../../shared/models/content-text';
   styleUrl: './destination.component.scss'
 })
 export class DestinationComponent implements OnInit{
-  injections = inject(ROUTER_OUTLET_DATA) as Signal<{data: ContentData, text: ContentText, screenWidth: number}>;
-  data!: ContentData;
-  text!: ContentText;
+  injections = inject(ROUTER_OUTLET_DATA) as Signal<{texts: { [key: string]: any }, screenWidth: number}>;
+  data!: Destination[];
+  texts!: { [key: string]: any };
   selectedDestination = 0;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(
+    private route: ActivatedRoute,
+    private contentService: ContentService
+  ) {
     effect(() => {
       const value = this.injections();
-      if (value?.text && value?.data) {
-        this.text = value.text;
-        this.data = value.data;
+      if (value?.texts) {
+        this.texts = value.texts;
       }
     });
   }
@@ -30,6 +32,15 @@ export class DestinationComponent implements OnInit{
       const destParam = params.get('dest');
       if (destParam !== null) {
         this.selectedDestination = +destParam;
+      }
+    });
+    this.contentService.getDestinations().subscribe({
+      next: data => {
+        this.data = data;
+        console.log('Destinations :', this.data);
+      },
+      error: err => {
+        console.error('Erreur chargement destinations :', err);
       }
     });
   }

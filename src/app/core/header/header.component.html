@@ -1,8 +1,8 @@
-<header>
+<header *ngIf="texts">
   <div class="logo-line-wrapper">
     <div class="logo-container">
       <div class="image-logo">
-        <img ngSrc="assets/images/shared/logo.svg" alt="Website logo" height="48" width="48" priority/>
+        <img [routerLink]="'./home/'" ngSrc="assets/images/shared/logo.svg" alt="Website logo" height="48" width="48" priority/>
       </div>
     </div>
     <div class="line-container" *ngIf="screenWidth > 1100">
@@ -12,7 +12,7 @@
   <div *ngIf="screenWidth < 705" class="image-menu" (click)="openMenu()">
     <img ngSrc="assets/images/shared/icon-hamburger.svg" alt="Menu icon" height="21" width="24"/>
   </div>
-  <p-drawer *ngIf="screenWidth < 705 && text" [(visible)]="visible" header="Drawer" position="right" #drawerRef>
+  <p-drawer *ngIf="screenWidth < 705" [(visible)]="visible" header="Drawer" position="right" #drawerRef>
     <ng-template #headless>
       <div class="menu">
         <div class="close-container">
@@ -22,7 +22,7 @@
         </div>
         <nav>
           <ul class="nav-list">
-            <li *ngFor="let title of text.nav; let i = index" class="nav-list-item" (click)="selectItem(title.toLowerCase())"
+            <li *ngFor="let title of navItems; let i = index" class="nav-list-item" (click)="selectItem(title.toLowerCase())"
                 [ngClass]="{
              'nav-list-item': true,
              'selected-item': selectedItem === title.toLowerCase()
@@ -37,9 +37,9 @@
       </div>
     </ng-template>
   </p-drawer>
-  <nav *ngIf="screenWidth >= 705 && text">
+  <nav *ngIf="screenWidth >= 705">
     <ul class="nav-list">
-      <li *ngFor="let title of text.nav; let i = index" class="nav-list-item" (click)="selectItem(title.toLowerCase())"
+      <li *ngFor="let title of navItems ; let i = index" class="nav-list-item" (click)="selectItem(title.toLowerCase())"
           [ngClass]="{
            'nav-list-item': true,
            'selected-item': selectedItem === title.toLowerCase()

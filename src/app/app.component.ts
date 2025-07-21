@@ -1,7 +1,5 @@
-import {Component, HostListener, Injector, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {ContentService} from './shared/services/content.service';
-import {ContentData} from './shared/models/content-data';
-import {ContentText} from './shared/models/content-text';
 import {PageEnum} from './shared/models/page-enum';
 
 @Component({
@@ -12,56 +10,27 @@ import {PageEnum} from './shared/models/page-enum';
 })
 export class AppComponent implements OnInit {
 
-  text!: ContentText;
-  data!: ContentData;
+  texts!: {[p: string]: any}
   page!: PageEnum;
   screenWidth!: number;
+  navItems!: string[];
 
   constructor(
     private contentService : ContentService,
-    private injector: Injector
   ) {
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.contentService.loadTexts();
     this.getScreenSize();
-    this.getData();
-    this.getText();
+    this.texts = this.contentService.getAllTexts();
     this.page = PageEnum.HOME;
+    this.navItems = this.texts['nav'] || [];
   }
 
   @HostListener('window:resize', ['$event'])
   getScreenSize() {
     this.screenWidth = window.innerWidth;
-  }
-
-  getData() {
-    this.contentService.getData().subscribe(
-      data => {
-        this.data = data;
-        console.log(this.data);
-      }
-    )
-  }
-
-  getText() {
-    this.contentService.getText().subscribe(
-      data => {
-        this.text = data;
-        console.log(this.text);
-      }
-    )
-  }
-
-  get customInjector() {
-    return Injector.create({
-      providers: [
-        {provide: 'text', useValue: this.text},
-        {provide: 'data', useValue: this.data},
-        {provide: 'page', useValue: this.page}
-      ],
-      parent: this.injector
-    })
   }
 
   protected readonly PageEnum = PageEnum;

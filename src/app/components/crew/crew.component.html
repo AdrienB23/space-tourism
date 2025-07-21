@@ -1,22 +1,22 @@
-<div *ngIf="text" class="main-content-container">
+<div *ngIf="texts && data" class="main-content-container">
   <div class="content-container">
     <div class="page-title">
       <span class="title-number">02</span>
-      <h1>{{text.crew.title.toUpperCase()}}</h1>
+      <h1>{{texts['crew.title'].toUpperCase()}}</h1>
     </div>
     <div class="content">
       <div class="explanation-container">
         <div class="explanation-content">
           <div class="text-container">
             <div class="rank-name">
-              <h2>{{data.crew[selectedCrew].name.toUpperCase()}}</h2>
-              <h3>{{data.crew[selectedCrew].role.toUpperCase()}}</h3>
+              <h2>{{data[selectedCrew].name.toUpperCase()}}</h2>
+              <h3>{{data[selectedCrew].role.toUpperCase()}}</h3>
             </div>
-            <p>{{data.crew[selectedCrew].bio}}</p>
+            <p>{{data[selectedCrew].bio}}</p>
           </div>
           <nav>
             <ul>
-              <li *ngFor="let crew of data.crew; let i = index">
+              <li *ngFor="let crew of data; let i = index">
                 <button pButton [class]="selectedCrew === i ? 'selected' : ''" [routerLink]="'/crew/' + i"></button>
               </li>
             </ul>
@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="image-container">
-        <img [src]="data.crew[selectedCrew].images.webp" alt="Crew image">
+        <img [src]="data[selectedCrew].image" alt="Crew image">
       </div>
     </div>
   </div>
