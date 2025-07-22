@@ -1,6 +1,7 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {ContentService} from './shared/services/content.service';
 import {PageEnum} from './shared/models/page-enum';
+import {PageData} from './shared/models/page-data';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ export class AppComponent implements OnInit {
   page!: PageEnum;
   screenWidth!: number;
   navItems!: string[];
+  data!: PageData;
 
   constructor(
     private contentService : ContentService,
@@ -24,6 +26,7 @@ export class AppComponent implements OnInit {
     await this.contentService.loadTexts();
     this.getScreenSize();
     this.texts = this.contentService.getAllTexts();
+    this.data = this.contentService.getData();
     this.page = PageEnum.HOME;
     this.navItems = this.texts['nav'] || [];
   }

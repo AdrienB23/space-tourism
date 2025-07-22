@@ -3,6 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, firstValueFrom, Observable} from 'rxjs';
 import {Destination} from '../models/destination';
 import {Crew} from '../models/crew';
+import {Technology} from '../models/technology';
+import {PageData} from '../models/page-data';
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +35,33 @@ export class ContentService {
 
   getCrews(): Observable<Crew[]> {
     return this.http.get<Crew[]>('http://localhost:8000/data/crews');
+  }
+
+  getTechnologies(): Observable<Technology[]> {
+    return this.http.get<Technology[]>('http://localhost:8000/data/technologies');
+  }
+
+  getData() {
+    let pageData: PageData = {
+      dest: [],
+      crew: [],
+      tech: []
+    };
+    this.getDestinations().subscribe(
+      data => {
+        pageData.dest = data;
+      }
+    );
+    this.getCrews().subscribe(
+      data => {
+        pageData.crew = data;
+      }
+    );
+    this.getTechnologies().subscribe(
+      data => {
+        pageData.tech = data;
+      }
+    );
+    return pageData;
   }
 }
