@@ -9,10 +9,10 @@
       <hr />
     </div>
   </div>
-  <div *ngIf="screenWidth < 705" class="image-menu" (click)="openMenu()">
+  <div *ngIf="screenWidth < 735" class="image-menu" (click)="openMenu()">
     <img ngSrc="assets/images/shared/icon-hamburger.svg" alt="Menu icon" height="21" width="24"/>
   </div>
-  <p-drawer *ngIf="screenWidth < 705" [(visible)]="visible" header="Drawer" position="right" #drawerRef>
+  <p-drawer *ngIf="screenWidth < 735" [(visible)]="visible" header="Drawer" position="right" #drawerRef>
     <ng-template #headless>
       <div class="menu">
         <div class="close-container">
@@ -37,7 +37,7 @@
       </div>
     </ng-template>
   </p-drawer>
-  <nav *ngIf="screenWidth >= 705">
+  <nav *ngIf="screenWidth >= 735">
     <ul class="nav-list">
       <li *ngFor="let title of navItems ; let i = index" class="nav-list-item" (click)="selectItem(title.toLowerCase())"
           [ngClass]="{
