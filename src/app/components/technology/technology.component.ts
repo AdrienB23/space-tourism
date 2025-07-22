@@ -36,4 +36,6 @@ export class TechnologyComponent implements OnInit {
       }
     });
   }
+
+  protected readonly Array = Array;
 }

@@ -132,5 +132,103 @@ button:hover {
 }
 
 @media(max-width: 1100px) {
+  h1, .title-number {
+    font-size: $font-size-tablet-5;
+  }
 
+  h2 {
+    font-size: $font-size-tablet-3;
+  }
+
+  p {
+    font-size: $font-size-tablet-9;
+    text-align: center;
+    width: 512px;
+  }
+
+  button, h3 {
+    font-size: $font-size-tablet-4;
+  }
+
+  .main-content-container {
+    align-items: center;
+    padding: $spacing-500;
+  }
+
+  .content {
+    flex-direction: column-reverse;
+    row-gap: $spacing-400;
+  }
+
+  .image-container {
+    width: 100%;
+    height: initial;
+  }
+
+  img {
+    padding-top: $spacing-800;
+    width: 100%;
+    height: 357px;
+  }
+
+  ul {
+    flex-direction: row;
+    column-gap: $spacing-200;
+  }
+
+  button {
+    width: 56px;
+    height: 56px;
+  }
+
+  .explanation-container {
+    flex-direction: column;
+    align-items: center;
+    row-gap: $spacing-500;
+  }
+
+  .text-container {
+    align-items: center;
+    row-gap: $spacing-200;
+  }
+
+  .rank-name {
+    align-items: center;
+  }
+}
+
+@media (max-width: 735px) {
+  h1, .title-number {
+    font-size: $font-size-mobile-6;
+  }
+
+  p {
+    font-size: $font-size-mobile-9;
+    width: 100%;
+  }
+
+  h2 {
+    font-size: $font-size-mobile-3;
+  }
+
+  button, h3 {
+    font-size: $font-size-mobile-4;
+  }
+
+  .main-content-container {
+    padding: $spacing-300;
+  }
+
+  .content-container {
+    align-items: center;
+  }
+
+  img {
+    height: 258px;
+  }
+
+  button {
+    width: 40px;
+    height: 40px;
+  }
 }
