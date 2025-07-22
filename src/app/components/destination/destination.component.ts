@@ -9,7 +9,7 @@ import {PageData} from '../../shared/models/page-data';
   styleUrl: './destination.component.scss'
 })
 export class DestinationComponent implements OnInit{
-  injections = inject(ROUTER_OUTLET_DATA) as Signal<{texts: { [key: string]: any }, data: PageData, screenWidth: number}>;
+  injections = inject(ROUTER_OUTLET_DATA) as Signal<{texts: { [key: string]: any }, data: PageData}>;
   data!: PageData;
   texts!: { [key: string]: any };
   selectedDestination = 0;
