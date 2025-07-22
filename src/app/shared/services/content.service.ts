@@ -4,6 +4,8 @@ import {BehaviorSubject, firstValueFrom, Observable} from 'rxjs';
 import {Destination} from '../models/destination';
 import {Crew} from '../models/crew';
 
+const url = "https://space-tourism-backend-p27f.onrender.com";
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +17,7 @@ export class ContentService {
 
   async loadTexts(): Promise<void> {
     try {
-      const data = await firstValueFrom(this.http.get<{ [key: string]: any }>('http://localhost:8000/texts'));
+      const data = await firstValueFrom(this.http.get<{ [key: string]: any }>(url + '/texts'));
       this.textsSubject.next(data || {});
       console.log('Texts loaded in service:', data);
     } catch (error) {
@@ -28,10 +30,10 @@ export class ContentService {
   }
 
   getDestinations(): Observable<Destination[]> {
-    return this.http.get<Destination[]>('http://localhost:8000/data/destinations');
+    return this.http.get<Destination[]>(url + '/data/destinations');
   }
 
   getCrews(): Observable<Crew[]> {
-    return this.http.get<Crew[]>('http://localhost:8000/data/crews');
+    return this.http.get<Crew[]>(url + '/data/crews');
   }
 }
