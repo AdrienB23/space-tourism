@@ -56,12 +56,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   openMenu() {
     this.visible = true;
-    console.log(this.visible);
   }
 
   closeMenu() {
     this.visible = false;
-    console.log(this.visible);
   }
 
 }

@@ -20,7 +20,6 @@ export class ContentService {
     try {
       const data = await firstValueFrom(this.http.get<{ [key: string]: any }>(url + '/texts'));
       this.textsSubject.next(data || {});
-      console.log('Texts loaded in service:', data);
     } catch (error) {
       console.error('Erreur lors du chargement des textes', error);
     }
