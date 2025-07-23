@@ -17,18 +17,6 @@ header {
   margin-right: -16px;
 }
 
-@media (max-width: 1100px) {
-  header {
-    padding: 0;
-  }
-
-  .logo-line-wrapper {
-    width: fit-content;
-    padding-left: $spacing-500;
-    padding-right: calc($spacing-500 + 32px);
-  }
-}
-
 .line-container {
   width: 100%;
   z-index: 1;
@@ -47,7 +35,7 @@ nav {
   align-items: center;
   background-color: rgba($white, 0.05);
   backdrop-filter: blur(80px);
-  padding: 0 64px;
+  padding: 0 $spacing-800;
   height: 96px;
   margin-left: -16px;
   width: 100%;
@@ -91,11 +79,31 @@ span {
   letter-spacing: 2.7px;
 }
 
+.image-logo {
+  height: 48px;
+}
+
 img {
   cursor: pointer;
 }
 
-@media (max-width: 705px) {
+@media (max-width: 1100px) {
+  header {
+    padding: 0;
+  }
+
+  .logo-line-wrapper {
+    width: fit-content;
+    padding-left: $spacing-500;
+    padding-right: calc($spacing-500 + 32px);
+  }
+
+  nav {
+    padding: 0 $spacing-500;
+  }
+}
+
+@media (max-width: 734px) {
   header {
     padding: $spacing-300 0;
   }
@@ -104,6 +112,10 @@ img {
     width: 100%;
     padding: 0 0 0 $spacing-300;
     margin: 0;
+  }
+
+  .image-logo {
+    height: 40px;
   }
 
   .image-menu {

@@ -1,1 +1,31 @@
-<p>technology works!</p>
+<div *ngIf="texts && data.tech" class="main-content-container">
+  <div class="content-container">
+    <div class="page-title">
+      <span class="title-number">03</span>
+      <h1>{{ texts['tech.title'].toUpperCase() }}</h1>
+    </div>
+    <div class="content">
+      <div class="explanation-container">
+        <nav>
+          <ul>
+            <li *ngFor="let tech of data.tech; let i = index">
+              <button pButton [class]="selectedTech === i ? 'selected' : ''" [routerLink]="'/technology/' + i">{{ i+1 }}</button>
+            </li>
+          </ul>
+        </nav>
+        <div class="text-container">
+            <div class="rank-name">
+              <h2>{{ data.tech[selectedTech].name.toUpperCase() }}</h2>
+              <h3>{{ texts['tech.term'].toUpperCase() }}</h3>
+            </div>
+            <p>{{ data.tech[selectedTech].description }}</p>
+        </div>
+      </div>
+      <div class="image-container">
+        <img
+          ngSrc="{{screenWidth > 1100 ? data.tech[selectedTech].image_portrait : data.tech[selectedTech].image_landscape}}"
+          alt="Technology image" width="608" height="600">
+      </div>
+    </div>
+  </div>
+</div>

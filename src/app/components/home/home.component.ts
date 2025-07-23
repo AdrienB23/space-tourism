@@ -8,7 +8,7 @@ import {ROUTER_OUTLET_DATA} from '@angular/router';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  injections = inject(ROUTER_OUTLET_DATA) as Signal<{texts: { [key: string]: any }, screenWidth: number}>;
+  injections = inject(ROUTER_OUTLET_DATA) as Signal<{texts: { [key: string]: any }}>;
   texts!: { [key: string]: any };
 
   constructor() {

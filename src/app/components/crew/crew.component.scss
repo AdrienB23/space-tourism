@@ -43,7 +43,9 @@ p {
 
 .main-content-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   padding: $spacing-600 0;
 }
 
@@ -65,7 +67,8 @@ p {
   display: flex;
   flex-direction: row;
   column-gap: $spacing-400;
-  height: 70vh;
+  height: 792px;
+  width: 100%;
 }
 
 .image-container {
@@ -73,14 +76,12 @@ p {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
 }
 
 .explanation-container {
   display: flex;
   min-width: 445px;
   width: 100%;
-  height: 100%;
 }
 
 .explanation-content {
@@ -167,14 +168,17 @@ button:hover {
   .content {
     flex-direction: column;
     align-items: center;
+    height: initial;
   }
 
   img {
-    width: 447px;
+    width: 446.8px;
+    height: 560px;
   }
 
   .explanation-container {
     max-width: 512px;
+    min-width: initial;
   }
 
   .explanation-content {
@@ -194,7 +198,7 @@ button:hover {
 
 }
 
-@media (max-width: 705px) {
+@media (max-width: 735px) {
   h1, .title-number {
     font-size: $font-size-mobile-6;
   }
@@ -224,6 +228,15 @@ button:hover {
 
   .content {
     row-gap: $spacing-400;
+  }
+
+  .image-container {
+    width: 100%;
+  }
+
+  img {
+    max-width: 310px;
+    height: auto;
   }
 
   .explanation-container {
