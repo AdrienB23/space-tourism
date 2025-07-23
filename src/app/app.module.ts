@@ -13,7 +13,6 @@ import {Drawer} from 'primeng/drawer';
 import {NgOptimizedImage} from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {Button, ButtonDirective} from "primeng/button";
-import { TextPipe } from './core/pipes/text.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,6 @@ import { TextPipe } from './core/pipes/text.pipe';
     DestinationComponent,
     CrewComponent,
     TechnologyComponent,
-    TextPipe,
   ],
   imports: [
     BrowserModule,

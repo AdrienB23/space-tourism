@@ -1,7 +1,6 @@
 import {Component, effect, inject, OnInit, Signal} from '@angular/core';
 import {ActivatedRoute, ParamMap, ROUTER_OUTLET_DATA} from '@angular/router';
-import {ContentService} from '../../shared/services/content.service';
-import {Crew} from '../../shared/models/crew';
+import {PageData} from '../../shared/models/page-data';
 
 @Component({
   selector: 'app-crew',
@@ -10,19 +9,19 @@ import {Crew} from '../../shared/models/crew';
   styleUrl: './crew.component.scss'
 })
 export class CrewComponent implements OnInit {
-  injections = inject(ROUTER_OUTLET_DATA) as Signal<{texts: { [key: string]: any }, screenWidth: number}>;
-  data!: Crew[];
+  injections = inject(ROUTER_OUTLET_DATA) as Signal<{texts: { [key: string]: any }, data: PageData}>;
+  data!: PageData;
   texts!: { [key: string]: any };
   selectedCrew = 0;
 
   constructor(
-    private route: ActivatedRoute,
-    private contentService: ContentService
+    private route: ActivatedRoute
   ) {
     effect(() => {
       const value = this.injections();
-      if (value?.texts) {
+      if (value?.texts && value?.data) {
         this.texts = value.texts;
+        this.data = value.data;
       }
     });
   }
@@ -32,15 +31,6 @@ export class CrewComponent implements OnInit {
       const crewParam = params.get('crew');
       if (crewParam !== null) {
         this.selectedCrew = +crewParam;
-      }
-    });
-    this.contentService.getCrews().subscribe({
-      next: data => {
-        this.data = data;
-        console.log('Crews :', this.data);
-      },
-      error: err => {
-        console.error('Erreur chargement destinations :', err);
       }
     });
   }
