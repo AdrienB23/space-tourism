@@ -13,7 +13,6 @@ const url = "https://space-tourism-backend-p27f.onrender.com";
 })
 export class ContentService {
   private textsSubject = new BehaviorSubject<{ [key: string]: any }>({});
-  texts$ = this.textsSubject.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -40,7 +39,7 @@ export class ContentService {
   }
 
   getTechnologies(): Observable<Technology[]> {
-    return this.http.get<Technology[]>('http://localhost:8000/data/technologies');
+    return this.http.get<Technology[]>(url + '/data/technologies');
   }
 
   getData() {
