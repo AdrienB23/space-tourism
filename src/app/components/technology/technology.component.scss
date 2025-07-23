@@ -87,12 +87,12 @@ ul {
 }
 
 button {
-  width: 80px;
-  height: 80px;
   background: none;
   border: solid 1px rgba($white, 0.25) !important;
   border-radius: 999px;
   transition: border-color 0.6s linear 0s;
+  width: 80px;
+  height: 80px;
 }
 
 button.selected {
