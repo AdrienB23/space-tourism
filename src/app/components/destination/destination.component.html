@@ -2,7 +2,7 @@
   <div class="content-container">
     <div class="page-title">
       <span class="title-number">01</span>
-      <h1>{{texts['dest.title'].toUpperCase()}}</h1>
+      <h1>{{texts['dest']['title'].toUpperCase()}}</h1>
     </div>
     <div class="content">
       <div class="image-container">
@@ -24,11 +24,11 @@
           <hr />
           <div class="statistics-container">
             <div class="distance-container">
-              <h3>{{ texts['dest.dist'].toUpperCase() }}</h3>
+              <h3>{{ texts['dest']['dist'].toUpperCase() }}</h3>
               <span class="stats">{{ data.dest[selectedDestination].distance.toUpperCase() }}</span>
             </div>
             <div class="travel-time-container">
-              <h3>{{ texts['dest.time'].toUpperCase() }}</h3>
+              <h3>{{ texts['dest']['time'].toUpperCase() }}</h3>
               <span class="stats">{{ data.dest[selectedDestination].travel.toUpperCase() }}</span>
             </div>
           </div>

@@ -1,4 +1,4 @@
-<div class="page-container" [ngClass]="{
+<div *ngIf="texts" class="page-container" [ngClass]="{
   'page-container': true,
   'home': page === PageEnum.HOME,
   'dest': page === PageEnum.DESTINATION,
@@ -7,7 +7,7 @@
   'm': screenWidth <= 1100 && screenWidth >= 735,
   's': screenWidth < 735,
 }">
-  <app-header [(page)]="page" [texts]="texts" [navItems]="navItems" [screenWidth]="screenWidth" ></app-header>
+  <app-header [(page)]="page" [navItems]="navItems" [screenWidth]="screenWidth" ></app-header>
   <main>
     <router-outlet [routerOutletData]="{texts: texts, data: data, screenWidth: screenWidth}"></router-outlet>
   </main>

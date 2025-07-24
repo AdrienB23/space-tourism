@@ -12,7 +12,6 @@ import {Subscription} from 'rxjs';
 export class HeaderComponent implements OnInit, OnDestroy {
   @Input() page!: PageEnum;
   @Input() navItems!: string[];
-  @Input() texts!: { [key: string]: any };
   @Input() screenWidth!: number;
   @Output() pageChange = new EventEmitter<unknown>();
 

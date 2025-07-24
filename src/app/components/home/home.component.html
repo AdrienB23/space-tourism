@@ -2,14 +2,14 @@
   <div class="content-container">
     <div class="content">
       <div class="texts-container">
-        <p class="description-text">{{ texts['home.desc'] }}</p>
-        <h1>{{ texts['home.title'].toUpperCase() }}</h1>
-        <h2>{{ texts['home.sub'].toUpperCase() }}</h2>
+        <p class="description-text">{{ texts['home']['desc'] }}</p>
+        <h1>{{ texts['home']['title'].toUpperCase() }}</h1>
+        <h2>{{ texts['home']['sub'].toUpperCase() }}</h2>
       </div>
       <div class="button-container">
         <button class="explore-button" [routerLink]="'/destination/0'" pButton>
           <span class="explore-text">
-            {{ texts['home.exp'].toUpperCase() }}
+            {{ texts['home']['exp'].toUpperCase() }}
           </span>
         </button>
       </div>
